@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Elena Mijares</title>
+    <meta name="description" content="About page for Elena Mijares">
+    <meta name="keywords" content="about, data science, social good">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+        
+        body {
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            position: relative;
+            width: 100%;
+            min-height: 100vh;
+            padding: 40px;
+            color: #000;
+            overflow: hidden;
+        }
+       /* Blue circle background */
+       .background-circle {
+            position: absolute;
+            width: 120vw;
+            height: 120vw;
+            border-radius: 50%;
+            background: radial-gradient(circle, #4285f4 0%, #1a73e8 50%, #0d47a1 100%);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0.85;
+            z-index: -1;
+        }
+        .header {
+            position: absolute;
+            top: 50px;
+            left: 50px;
+        }
+        
+        .header h1 {
+            font-size: 64px;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        
+        .date {
+            position: absolute;
+            top: 45px;
+            right: 45px;
+            font-size: 18px;
+        }
+        
+        .profile {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            width: 60%;
+        }
+        
+        .profile img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 2px solid #000;
+        }
+        
+        .intro {
+            margin-bottom: 30px;
+            font-size: 18px;
+            line-height: 2.0;
+        }
+        
+        .skills {
+            position: absolute;
+            bottom: 120px;
+            left: 40px;
+        }
+        
+        .skills h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+        
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .interests {
+            position: absolute;
+            bottom: 120px;
+            right: 40px;
+            text-align: right;
+        }
+        
+        .interests h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+        
+        .interests-list {
+            list-style-type: none;
+            text-align: right;
+        }
+        
+        .interests-list li {
+            margin-bottom: 5px;
+        }
+        
+        .social {
+            position: absolute;
+            bottom: 40px;
+            left: 40px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .social-button {
+            background-color: #000;
+            color: white;
+            padding: 8px 16px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: opacity 0.3s;
+        }
+        
+        .social-button:hover {
+            opacity: 0.8;
+        }
+        
+        .footer {
+            position: absolute;
+            bottom: 40px;
+            right: 40px;
+            font-size: 12px;
+        }
+        
+        /* Media queries for responsiveness */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            .header, .date, .skills, .interests {
+                position: relative;
+                top: auto;
+                right: auto;
+                left: auto;
+                bottom: auto;
+                margin-bottom: 30px;
+            }
+            
+            .date {
+                text-align: right;
+                margin-top: -25px;
+            }
+            
+            .profile {
+                position: relative;
+                top: auto;
+                left: auto;
+                transform: none;
+                width: 100%;
+                margin: 40px 0;
+            }
+            
+            .interests {
+                text-align: left;
+            }
+            
+            .interests-list {
+                text-align: left;
+            }
+            
+            .social, .footer {
+                position: relative;
+                bottom: auto;
+                left: auto;
+                right: auto;
+                margin-top: 30px;
+            }
+            
+            .footer {
+                text-align: center;
+                margin-top: 50px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Blue circle background created with CSS -->
+        <div class="background-circle"></div>
+        <div class="header">
+            <h1>Elena Mijares</h1>
+            <p> Social Science & Data Science</p>
+        </div>
+        
+        <div class="date">
+            Berlin, 2025
+        </div>
+        
+        <div class="profile">
+            <img src="{{ image_url | default('/static/images/default-profile.png', true) }}" alt="Elena Mijares">
+            <div class="intro">
+                <p>Mexican by heart but moved to Germany to pursue my studies. I started in Cologne for my Bachelor in Social Sciences and ended up in Berlin!</p>
+                <p>Currently, I am a MDS Student at the Hertie School with a passion for using data for the social good.</p>
+            </div>
+        </div>
+        
+        <div class="skills">
+            <h2>Skills</h2>
+            <div class="skills-list">
+                <span class="skill-badge">Data visualization</span>
+                <span class="skill-badge">R</span>
+                <span class="skill-badge">Python</span>
+                <span class="skill-badge">Statistical modeling</span>
+                <span class="skill-badge">SQL</span>
+                <span class="skill-badge">STATA</span>
+                <span class="skill-badge">Research Methods</span>
+            </div>
+        </div>
+        
+        <div class="interests">
+            <h2>Interests</h2>
+            <ul class="interests-list">
+                <li>Social Policy</li>
+                <li>Gender Studies</li>
+                <li>Political Psychology</li>
+                <li>Sustainable Development</li>
+                <li>Data Science</li>
+                <li>Machine Learning</li>
+            </ul>
+        </div>
+        
+        <div class="social">
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/elena-mijares-lopez-7077591b0/" target="_blank" class="social-button">LinkedIn</a>
+                <a href="https://github.com/emijlop" target="_blank" class="social-button">GitHub</a>
+            </div>
+        </div>
+        
+        <div class="footer">
+            Created using Flask
+        </div>
+    </div>
+</body>
+</html>
